@@ -1,0 +1,28 @@
+.form {
+    
+    position: relative;
+    left: 400px;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.frm {
+    display: grid;
+    padding: 30px;
+    border-radius: 20px;
+    background:rgba(247, 246, 244, 0.73);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5) ;
+    padding-left: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.form form input {
+    display: flex;
+    margin: 10px;
+    width: 450px;
+    height: 30px;
+}
