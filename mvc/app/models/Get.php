@@ -11,7 +11,8 @@ class Get extends Database
     {
         $name = $_POST['inputname'];
         $this->query("select * from empdetail where fname='$name'");
-        return $this->single();
+        return $this->resultSet();
+        
     }
     public function getid($id)
     {

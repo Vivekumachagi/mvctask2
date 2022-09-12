@@ -16,7 +16,7 @@
             <th>photo</th>
         </tr>
         <tr>
-            <?php foreach ($data as $post) : ?>
+            <?php foreach ($data['posts'] as $post) : ?>
                 <td><?= $post->id ?></td>
                 <td><?= $post->fname ?></td>
                 <td><?= "user found" ?></td>
