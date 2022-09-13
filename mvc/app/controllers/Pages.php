@@ -23,7 +23,6 @@ class Pages extends Controller
   }
   public function loginn()
   {
-    
     if (isset($_SESSION['name'])) {
       $models = $this->model('get');
       $values = $models->getdata();

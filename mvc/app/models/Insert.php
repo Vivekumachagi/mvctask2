@@ -3,7 +3,7 @@
 class Insert extends Database
 {
     public function insrt($img)
-    {
+    {  
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
@@ -14,6 +14,7 @@ class Insert extends Database
         $country = $_POST['country'];
         $pincode = $_POST['pincode'];
         $image = $img;
+       
         $this->query("insert into empdetail (fname, lname, email, phone, street, city, state, country, pincode, photo) values('$fname','$lname','$email', '$phone','$street','$city','$state', '$country','$pincode','$image')");
         return $this->execute();
     }

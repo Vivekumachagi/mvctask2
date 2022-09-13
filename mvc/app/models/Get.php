@@ -19,4 +19,9 @@ class Get extends Database
         $this->query("select * from empdetail where id='$id'");
         return $this->single();
     }
+    public function getemail($id)
+    {
+        $this->query("select * from empdetail where email='$id'");
+        return $this->single();
+    }
 }

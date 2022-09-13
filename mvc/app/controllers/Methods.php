@@ -35,8 +35,9 @@ class Methods extends Controller
             if (isset($_POST['signup'])) {
                 $name = $_POST['email'];
                 $password = $_POST['password'];
-
-                if (USER_EMAIL == $name && USER_PASS == $password) {
+                $verifyPassword = false;
+                $verifyPassword = password_verify($password, USER_PASS);
+                if (USER_EMAIL == $name && $verifyPassword == true) {
                     $_SESSION['name'] = $name;
                     $this->view('pages/logged', $this->getdata());
                 } else {
@@ -164,8 +165,17 @@ class Methods extends Controller
                 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
                 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
                 $models = $this->model('Insert');
-                $models->insrt($target_file);
-                $this->view('pages/logged', $this->getdata());
+                $exp = $this->model('get');
+                $val = $_POST['email'];
+                $result = $exp->getemail($val);
+                if (!$result) {
+                    $models->insrt($target_file);
+                    $this->view('pages/logged', $this->getdata());
+                } else {
+                    session_start();
+                    $_SESSION['emailExist'] = 'email already exists';
+                    $this->view('pages/signup');
+                }
             }
         } else {
             $this->view('pages/logged', $this->getdata());

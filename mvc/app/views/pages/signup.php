@@ -1,4 +1,12 @@
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/signup.css">
+<div id="emailError">
+<?php
+if (isset($_SESSION['emailExist'])) {
+    print_r($_SESSION['emailExist']);
+    unset($_SESSION['emailExist']);
+}
+?>
+</div>
 <div class="form">
     <form action="<?php echo URLROOT . 'Methods/insert' ?>" name="editForm" onsubmit="return scearch()" method="post" class="frm" enctype="multipart/form-data">
         <div class="imgs">

@@ -6,10 +6,8 @@
   define('DB_NAME', 'emp');
   // User Details
   define('USER_EMAIL','vivek@gmail.com');
-  define('USER_PASS','123');
+  define('USER_PASS',password_hash('123', PASSWORD_DEFAULT));
   define('USER_NAME','Vivek');
-  
-
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
